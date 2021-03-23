@@ -12,10 +12,19 @@ install:  ## install dependencies
 build: 	## transpile typescript to the /dist folder
 	tsc
 
+clean: ## delete built files
+	rm -rf ./dist
 
+WATCH_CMD=tsc --watch
 watch: 	## watch for code changes and transpile as we go
-	tsc --watch
+	${WATCH_CMD}
 
 
+START_CMD=node ./dist/index.js
 start: 	## run the server
-	node ./dist/index.js
+	${START_CMD}
+
+NPM_BIN=$(shell npm bin)
+start-dev: ## start watching source files and running server concurrently
+	echo ${NPM_BIN}
+	${NPM_BIN}/concurrently --kill-others "${WATCH_CMD}" "${START_CMD}" 
