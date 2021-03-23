@@ -5,7 +5,9 @@ const PORT: number = 3000;
 
 const app = express();
 
+// Static file service
 app.use(express.static(path.join(__dirname, 'static')));
+
 app.use('/js', express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => {
