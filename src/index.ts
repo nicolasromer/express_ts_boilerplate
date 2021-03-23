@@ -5,11 +5,8 @@ const PORT: number = 3000;
 
 const app = express();
 
-app.get('/', (req, res) => {
-	res.send('Bacon is the food of the gods');
-})
-
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'static')));
+app.use('/js', express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => {
 	console.log('listening on port ' + PORT);
