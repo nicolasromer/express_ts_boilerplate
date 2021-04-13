@@ -12,3 +12,6 @@ An Express and Typescript service boilerplate
 ### usage
 - `make` installs, builds, and runs the server
 - `make start-dev` will run the server while watching files for changes`
+
+## todo
+- add tests
