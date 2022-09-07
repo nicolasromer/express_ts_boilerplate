@@ -1,6 +1,6 @@
 
 
-# Nick's Lowlander ExpressTS Speedy Project Initialization Boilerplate
+# Nick's ExpressTS Speedy Project Initialization Boilerplate
 An Express and Typescript service boilerplate
 
 ---
