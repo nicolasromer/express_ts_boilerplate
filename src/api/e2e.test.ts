@@ -7,15 +7,17 @@ describe('Test funny word endpoints', () => {
     it('gets words', async() => {
         const url = "/api/funny-words";
 
-        const response = await request(app).get(url);
-        expect(response.body).toEqual([]);
-        expect(response.statusCode).toBe(200);
+        const response = await request(app)
+            .get(url)
+            .expect(200);
+
+        expect(response.body).toEqual({"data": []})
     });
 
     it('adds words', async() => {
         const url = "/api/funny-words";
 
-        const word = "floof"
+        const word = "floof";
 
         await request(app)
             .post(url)
@@ -25,7 +27,7 @@ describe('Test funny word endpoints', () => {
         const response2 = await request(app)
             .get(url)
             .expect(200);
-        expect(response2.body).toEqual([word]);
 
+        expect(response2.body).toEqual({"data": [word]});
     });
 })

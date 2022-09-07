@@ -7,7 +7,7 @@ export default {
 
         const words = service.getWords()
 
-        res.send(words);
+        res.send({data: words});
     },
 
     post(req: Request, res: Response) {

@@ -6,7 +6,7 @@ const router = express.Router();
 import controller from "./controller";
 
 router.get('/', (req: Request, res: Response) => {
-    res.send('healthy');
+    res.send({'status': 'ok'});
 })
 
 router.get('/funny-words', controller.get);
