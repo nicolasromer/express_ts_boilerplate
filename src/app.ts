@@ -5,6 +5,8 @@ import router from "./api/routes";
 
 const app = express();
 
+app.use(express.json());
+
 app.use('/api', router);
 
 // Static file service
