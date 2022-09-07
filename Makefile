@@ -25,7 +25,7 @@ clean: ## delete built files
 	rm -rf ./dist
 
 
-START_CMD=node ./dist/index.js
+START_CMD=node ./dist/server.js
 start: 	## run the server from built files
 	${START_CMD}
 
@@ -38,3 +38,6 @@ watch: 	## watch for code changes and transpile as we go
 
 start-dev: ## start watching source files and running server concurrently
 	${NPM_BIN}/concurrently --kill-others "${WATCH_TS}" "${WATCH_STATIC}" "${START_CMD}"
+
+test:
+	jest

@@ -7,4 +7,4 @@ router.get('/', (req: Request, res: Response) => {
     res.send('healthy');
 })
 
-module.exports = router
+export default router
